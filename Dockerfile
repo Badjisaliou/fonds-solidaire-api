@@ -14,11 +14,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # copier le projet
 COPY . .
 
-# installer les dépendances Laravel
+# installer dépendances Laravel
 RUN composer install --no-dev --optimize-autoloader
-
-# générer la clé
-RUN php artisan key:generate
 
 # exposer le port
 EXPOSE 10000
