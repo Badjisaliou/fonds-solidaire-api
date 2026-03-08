@@ -30,3 +30,9 @@ Route::get('/test', function () {
         "server_time" => now()
     ]);
 });
+
+use App\Models\User;
+
+Route::get('/users-test', function () {
+    return User::all();
+});
