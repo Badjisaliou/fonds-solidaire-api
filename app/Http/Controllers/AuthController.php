@@ -25,9 +25,9 @@ class AuthController extends Controller
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
-            'message' => 'Utilisateur créé',
+            'message' => 'Utilisateur cree',
             'token' => $token
-        ]);
+        ], 201);
     }
 
     public function login(Request $request)
@@ -48,17 +48,17 @@ class AuthController extends Controller
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
-            'message' => 'Connexion réussie',
+            'message' => 'Connexion reussie',
             'token' => $token
         ]);
     }
 
     public function logout(Request $request)
-{
-    $request->user()->tokens()->delete();
+    {
+        $request->user()->tokens()->delete();
 
-    return response()->json([
-        'message' => 'Déconnexion réussie'
-    ]);
-}
+        return response()->json([
+            'message' => 'Deconnexion reussie'
+        ]);
+    }
 }

@@ -14,6 +14,7 @@ class CotisationResource extends JsonResource
             'montant' => $this->montant,
             'description' => $this->description,
             'statut' => $this->statut,
+            'date_cotisation' => $this->date_cotisation,
             'date' => $this->date_cotisation,
         ];
     }
